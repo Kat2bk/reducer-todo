@@ -12,10 +12,16 @@ export const initialState = {
 
 export const reducer = (state, action) => {
     switch(action.type) {
-        case "UPDATE_TODO":
+        case "ADD_TODO":
             return {
                 ...state,
                 todos: [...state.todos, action.payload]
             };
+            case "CLEAR_TASK":
+            return {
+
+            }
+            default:
+            return state
     }
 }

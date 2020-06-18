@@ -1,5 +1,6 @@
 import React, {useState, useReducer} from "react";
 import {reducer, initialState} from "../reducers/reducer";
+import TodoList from "./TodoList";
 
 const TodoForm = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -11,13 +12,14 @@ const TodoForm = () => {
 
     const clearTask = event => {
         event.preventDefault();
+        dispatch({ type: "CLEAR_TASK"})
     }
 
     const addTodo = event => {
         event.preventDefault();
         dispatch({
-            type: "UPDATE_TODO",
-            payload: {item: newTodo, completed: false}
+            type: "ADD_TODO",
+            payload: {item: newTodo, completed: false, id: Date.now()}
         })
         setnewTodo('');
     }
@@ -27,8 +29,11 @@ const TodoForm = () => {
             <form className="form-box">
                 <input className="input" type="text" name="todo" onChange={handleChanges} />
             </form>
+            <TodoList todos={state}/>
             <button onClick={addTodo} className="btn">Add Task</button>
-            <button className="btn">Clear Task</button>
+            <button onClick={clearTask} className="btn">Clear Task</button>
         </div>
     )
 }
+
+export default TodoForm;
