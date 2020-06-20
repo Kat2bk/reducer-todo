@@ -10,9 +10,8 @@ const TodoForm = () => {
         setnewTodo(event.target.value);
     }
 
-    const clearTask = event => {
-        event.preventDefault();
-        dispatch({ type: "CLEAR_TASK"})
+    const clearTask = () => {
+        dispatch({ type: "TOGGLE_COMPLETE"})
     }
 
     const addTodo = event => {
@@ -29,7 +28,7 @@ const TodoForm = () => {
             <form className="form-box">
                 <input className="input" type="text" name="todo" onChange={handleChanges} />
             </form>
-            <TodoList todos={state}/>
+            <TodoList todos={state} dispatch={dispatch}/>
             <button onClick={addTodo} className="btn">Add Task</button>
             <button onClick={clearTask} className="btn">Clear Task</button>
         </div>

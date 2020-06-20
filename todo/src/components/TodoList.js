@@ -5,7 +5,7 @@ import React from "react";
     return (
         <div>
         {props.todos.todos.map(item => {
-            return <p>{item.item}</p>
+            return <p onClick={() => props.dispatch({type: "TOGGLE_COMPLETE", payload: item.id})}>{item.item}</p>
         })}
         </div>
     )
