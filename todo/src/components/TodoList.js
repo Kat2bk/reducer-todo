@@ -1,12 +1,13 @@
 import React from "react";
 
  const TodoList = (props) => {
-    console.log(props.todos.todos)
+    console.log(props.todos)
+
     return (
         <div>
-        {props.todos.todos.map(item => {
-            return <p onClick={() => props.dispatch({type: "TOGGLE_COMPLETE", payload: item.id})}>{item.item}</p>
-        })}
+        {props.todos.map(item => (
+         <p onClick={() => props.toggleComplete(item.id)}>{item.item}</p>
+        ))}
         </div>
     )
 }

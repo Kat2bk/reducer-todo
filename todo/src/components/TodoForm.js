@@ -11,7 +11,7 @@ const TodoForm = () => {
     }
 
     const clearTask = () => {
-        dispatch({ type: "TOGGLE_COMPLETE"})
+        dispatch({type: "CLEAR_TASK"})
     }
 
     const addTodo = event => {
@@ -23,12 +23,16 @@ const TodoForm = () => {
         setnewTodo('');
     }
 
+    const toggleComplete = (todoID) => {
+        dispatch({type: "TOGGLE_COMPLETE", payload: todoID})
+    }
+
     return (
         <div>
             <form className="form-box">
                 <input className="input" type="text" name="todo" onChange={handleChanges} />
             </form>
-            <TodoList todos={state} dispatch={dispatch}/>
+            <TodoList todos={state.todos} toggleComplete={toggleComplete}/>
             <button onClick={addTodo} className="btn">Add Task</button>
             <button onClick={clearTask} className="btn">Clear Task</button>
         </div>

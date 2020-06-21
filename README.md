@@ -43,7 +43,7 @@ Follow these steps for completing your project.
 
 ### STEP 1 - Build a simple reducer and initial state
 
-- In a folder called `reducers` add a reducer file and build out a simple reducer with just a default return for now
+<!-- - In a folder called `reducers` add a reducer file and build out a simple reducer with just a default return for now
 - In the same file, build your initial state object that has a list of todos with the following shape:
 
 ```js
@@ -52,9 +52,9 @@ Follow these steps for completing your project.
   completed: false,
   id: 3892987589
 }
-```
+``` -->
 
-- Export both the reducer and the initial state object
+<!-- - Export both the reducer and the initial state object -->
 
 ### STEP 2 - Set up state in your component
 
@@ -65,9 +65,9 @@ You get to choose how you want to set up your components. Please don't just do t
 
 ### STEP 3 - Adding todos
 
-- Build a form to add todos to your list
-- Build a function that will dispatch an action to add a new todo
-- Write the `case` in your reducer for adding a todo (You can create a unique id with `new Date()`)
+<!-- - Build a form to add todos to your list -->
+<!-- - Build a function that will dispatch an action to add a new todo -->
+<!-- - Write the `case` in your reducer for adding a todo (You can create a unique id with `new Date()`) -->
 
 ### STEP 4 - Toggle the completed field
 
