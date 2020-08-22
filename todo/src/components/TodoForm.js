@@ -23,8 +23,8 @@ const TodoForm = () => {
         setnewTodo('');
     }
 
-    const toggleComplete = (todoID) => {
-        dispatch({type: "TOGGLE_COMPLETE", payload: todoID})
+    const toggleComplete = (todoNumber) => {
+        dispatch({type: "TOGGLE_COMPLETE", payload: todoNumber})
     }
 
     return (
